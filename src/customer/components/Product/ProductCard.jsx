@@ -1,30 +1,30 @@
 import React from "react";
 import "./ProductCard.css"
 
-const ProductCard = () => {
+const ProductCard = ({product}) => {
     return (
         <div className="productCard w-[15rem] m-3 transition-all cursor-pointer" >
             <div className="h-[20rem]">
-                <img className="h-full w-full object-cover objectleft-left-top" src="https://rukminim1.flixcart.com/image/612/612/l0wrafk0/dress/l/2/o/3xl-m2s13003-peach-madame-original-imagchhhwbypcann.jpeg?q=70" alt="" />
+                <img className="h-full w-full object-cover objectleft-left-top" src={product.imageUrl} alt="" />
             </div>
             <div className="textPart bg-white p-3">
                 <div>
-                    <p className="font-bold opacity-60">MADAME</p>
+                    <p className="font-bold opacity-60">{product.brand}</p>
                     <p >
-                        Women Asymmetric Pink Dress
+                        {product.title}
                     </p>
                 </div>
                 <div className="flex items-center space-x-2">
 
                     <p className="font-semibold">
-                        199
+                        {product.discountPrice}
                     </p>
 
                     <p className="line-through opacity-50">
-                        599
+                        {product.price}
                     </p>
                     <p className="text-green-600 font-semibold">
-                        70% Off
+                        {product.discountPersent}% Off
                     </p>
                 </div>
             </div>
